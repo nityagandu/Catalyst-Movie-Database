@@ -1,5 +1,5 @@
-# cs180project-021-team-catalyst
-cs180project-021-team-catalyst created by Alexander Trinh, Arashdeep Singh, Jose Cruz, Michael Risher and Nitya Gandu
+
+# Catalyst-Movie-Database
 
 ## Prerequisites
 
