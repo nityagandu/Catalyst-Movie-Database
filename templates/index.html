@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}" media="all"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}" media="all"/>
+        <title>Home Page</title>
+    </head>
+    <body>
+        <header> <!-- Im where your header stuff goes-->
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                <div class="container">
+                  <a class="navbar-brand mr-4" href="/">Catalyst Movie Database</a>
+                  <div id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                      <a class="nav-item nav-link" href="/movieTable">Home</a>
+                      <div class="nav-dropdown">
+                          <span>Searchs &#9660;</span>
+                          <div>
+                            <a class="nav-item nav-link" href="/titleSearch">Title Search</a>
+                            <a class="nav-item nav-link" href="/ratingSearch">Rating Search</a>
+                            <a class="nav-item nav-link" href="/genreSearch">Genre Search</a>
+                            <a class="nav-item nav-link" href="/releaseDateSearch">Release Date Search</a>
+                            <a class="nav-item nav-link" href="/productionCompaniesSearch">Production Companies Search</a>
+                            <a class="nav-item nav-link" href="/productionCountriesSearch">Production Countries Search</a>
+                          </div>
+                      </div>
+
+                      
+                      
+                      <a class="nav-item nav-link" href="/inputData">Input Movie</a>
+                      <a class="nav-item nav-link" href="/import">Import</a>
+                      <a class="nav-item nav-link" href="/export">Export</a>
+                      <div class="nav-dropdown">
+                        <span>Analytics &#9660;</span>
+                        <div>
+                            <a class="nav-item nav-link" href="/profitTable">Profit Table Analytic</a>
+                            <a class="nav-item nav-link" href="/productionCountriesSearch">Production Countries Analytic</a>
+                            <a class="nav-item nav-link" href="/datePeriodSearch">Date Period Analytic</a>
+                            <a class="nav-item nav-link" href="/actorPopularity">Actor Popularity Analytic</a>
+                            <a class="nav-item nav-link" href="/directorsSuccess">Director Success Analytic</a>
+                            <a class="nav-item nav-link" href="/productionCompany">Production Company Analytic</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <section><!-- the page content is here -->
+            {% block content %}
+            <form action="#" method="POST">
+                <p>Search:</p>
+                <p><input type="text" name="search-input"></p>
+                <p><input class="margin5Top" type="submit" value="submit"></p>
+            </form>
+            {% endblock %}
+        </section>
+        <footer> <!-- any footer stuff goes here -->
+
+        </footer>
+        <!-- load scripts here so the dom is already loaded-->
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/canvasjs.min.js') }}"></script>
+        {% block scripts %}
+
+        {% endblock %}
+    </body>
+    
+</html>

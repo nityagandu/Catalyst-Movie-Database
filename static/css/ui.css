@@ -1,0 +1,213 @@
+body,html{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: #353535;
+    background: linear-gradient( 180deg, #353535, #676767);
+    color: #cacaca;
+    padding: 5px;
+}
+
+nav{
+    padding-top:10px;
+}
+nav a.navbar-brand.mr-4 {
+    font-size: x-large;
+    padding: 10px 10px 5px 10px;
+    text-decoration: none;
+}
+
+nav a, .nav-dropdown span {
+    color: white;
+}
+
+nav #navbarToggle{
+    margin-top:10px;
+}
+nav a.nav-item.nav-link, .nav-dropdown span {
+    padding: 10px 20px
+}
+
+
+.navbar-nav.mr-auto{
+    padding: 10px 0;
+}
+
+.navbar-nav > a.nav-item.nav-link:hover, .nav-dropdown:hover span {
+    background: #9d9d9d;
+}
+
+.nav-dropdown{
+    display: inline-block;
+    position: relative;
+}
+.nav-dropdown > div{
+    display:none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background: whitesmoke;
+    color:black;
+    min-width: 200px;
+}
+
+.nav-dropdown:hover>div{
+    display:block;
+}
+.nav-dropdown:hover div > a.nav-item{
+    display: block;
+    color: #646464;
+    font-size: 13pt;
+}
+
+.nav-dropdown:hover div > a.nav-item:hover {
+    background: #c7c7c7;
+    color: #262626;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+thead tr{
+    border-bottom: 1px solid #000;
+}
+
+tbody tr td, thead tr th{
+    border-right: 1px solid #cacaca;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+tbody tr td:last-child, thead tr th:last-child{
+    border-right:none;
+}
+tbody tr:nth-child(even){
+    background: #e7e7e7;
+}
+section{
+    margin: 15px;
+}
+footer{
+    margin: 15px;
+}
+
+
+/** modal css */
+.modalShadow {
+    position: fixed;
+    /* Stay in place */
+    z-index: 5;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #000000;
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+  .modal {
+    position: absolute;
+    /* Stay in place */
+    padding-top: 75px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+  }
+  .modal .modalWrapper {
+    border: 1px solid #e4e4e4;
+    width: 500px;
+  }
+  .modal .modalWrapper.wide {
+    width: 800px;
+  }
+  .modal .modalWrapper .modalHeaderWrapper {
+    padding: 15px 20px 10px 20px;
+    margin: auto;
+    border-bottom: 1px solid #9c9c9c;
+    background: #fff;
+    color: #000;
+  }
+  .modal .modalWrapper .modalHeaderWrapper .modalHeader {
+    margin-bottom: 5px;
+  }
+  .modal .modalWrapper .modalHeaderWrapper .title {
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+  .modal .modalWrapper .modalHeaderWrapper .close {
+    color: #909090;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .modal .modalWrapper .modalHeaderWrapper .close:hover,
+  .modal .modalWrapper .modalHeaderWrapper .closefocus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal .modalWrapper .modalContentWrapper {
+    padding: 15px 20px 0 20px;
+    margin: auto;
+    background-image: -webkit-linear-gradient(top, #c5c5c5 4px, #e2e2e2 9px, #fbfbfb 22px, #ffffff 100%);
+    overflow: auto;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent {
+    min-height: 20px;
+    max-height: 450px;
+    line-height: 18px;
+    height: auto;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .listing li {
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #000;
+    border-bottom: none;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .listing li:last-child {
+    border-bottom: 1px solid #000;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .listing li:nth-child(even) {
+    background: #e8e8e8;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .column {
+    float: left;
+    width: 50%;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .column input {
+    width: 205px;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=number],
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=password],
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=text],
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=email],
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=search],
+  .modal .modalWrapper .modalContentWrapper .modalContent textarea,
+  .modal .modalWrapper .modalContentWrapper .modalContent input[type=datetime-local],
+  .modal .modalWrapper .modalContentWrapper .modalContent select {
+    width: 440px;
+  }
+  .modal .modalWrapper .modalContentWrapper .modalContent .ui-copyinput input {
+    width: 384px;
+  }
+  .modal .modalWrapper .modalFooterWrapper {
+    background: #fff;
+    padding: 15px 20px 20px 20px;
+    margin: auto;
+  }
+  .modal .modalWrapper .modalFooterWrapper .modalFooter {
+    text-align: right;
+  }
+  .modal .modalWrapper .modalFooterWrapper .modalFooter input {
+    margin: 0 0 0 15px;
+  }
+/** end modal css */

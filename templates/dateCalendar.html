@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Search Highest Budget of Movie Within Date Range</h1>
+    <form action='datePeriodSearch' method="post">
+    <label for="start">Start Date:</label>
+
+    <input type="date" id="sDate" name="trip-start"
+        value="2000-01-01"
+        min="1916-01-01" max="2021-10-25">
+    
+
+    
+    <label for="end">End Date:</label>
+
+    <input type="date" id="eDate" name="trip-end"
+        value="2021-10-25"
+        min="1916-01-01" max="2021-10-25">
+        <input type="submit" value="submit" />
+    </form>
+
+    {% if data %}
+    <table id=myTable>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Budget</th>
+                <th>Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in data%}
+                <tr>
+                    <td><a href='/movie/{{i.id}}'>{{i.title}}</a></td>
+                    <td>{{i.releaseDate}}</td>
+                    <td>{{i.budget}}</td>
+                    <td>{{i.revenue}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% endif %}
+
+{% endblock content %}

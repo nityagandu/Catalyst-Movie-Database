@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Search for production companies top 25 movies</h1>
+    <form action="/productionCompany" method="POST">
+        <p>Search:</p>
+        <p><input type="text" name="search-input"></p>
+        <p><input class="margin5Top" type="submit" value="submit"></p>
+    </form>
+
+    
+    {% if data %}
+    <table id=myTable>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Production Company</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for key, i in data.items()%}
+                <tr>
+                    <td><a href='/movie/{{i.id}}'>{{i.title}}</a></td>
+                    <td>{{", ".join( i.productionCompanies )}}</td>
+                    <td>{{i.voteAverage}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% endif %}
+{% endblock content %}

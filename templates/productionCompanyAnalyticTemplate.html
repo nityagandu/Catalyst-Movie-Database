@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="utf-8" />
+    <title>Production Companies Top Rated Movies</title>
+</head>
+<body>
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Find the Production Companies Top Rated Movies</h1>
+
+    <p>Search:</p>
+    <p><input id="company" type="text" name="search-input"></p>
+    <p><input id="button-press" class="margin5Top" type="submit" value="submit"></p>
+
+    <div>
+        <h3 id="movies-display-header"></h3>
+        <!-- Table to display fetched movie data -->
+        <table id="movies"></table>
+      </div>
+
+    <script type = "text/javascript">
+        //on select
+        document.getElementById("company").onclick = function() {
+            var text = document.getElementById("company").value;
+            console.log(text)
+
+            //call function productionCompanyHelper() in main
+            fetch("/productionCompanyHelper", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(text),
+                })
+                .then(response => response.json())
+                .then(json => {
+                    //clear previous table values
+                    document.getElementById("movies").innerHTML = null;
+
+                    //assemble table
+                    document.getElementById("movies-display-header").innerHTML = "Movies";
+                    let li;
+                    if (json[0].title != "Page Does Not Exist") {
+                        li = `<tr><th>Name</th></tr>`;
+                        // Loop through each data and add a table row
+                        json.forEach(movie => {
+                            li += `<tr>
+                                <td>${movie.title} </td>
+                            </tr>`;
+                        });
+                    }
+                    else {
+                        document.getElementById("movies-display-header").innerHTML = null;
+                        li = 'No Movies Found';
+                    }
+                    // Display result
+                    document.getElementById("movies").innerHTML = li;
+                })
+                .catch(err => { console.log(err); })
+        };
+    </script>
+{% endblock content %}
+</body>
+</html>

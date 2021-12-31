@@ -1,0 +1,102 @@
+{% extends "index.html" %}
+{% block content %}
+
+<table id=myTable>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <!-- <th>Status</th> -->
+            <th>Release Date</th>
+            <th>Runtime in min</th>
+            <th>Spoken Langauge</th>
+            <th>Genres</th>
+            <!-- <th>Tagline</th> -->
+            <th>Production Companies</th>
+            <th>Production Countries</th>
+            <th width='7%'>Budget</th>
+            <th width='7%' class="aligncenter">Revenue</th>
+            <th>Vote Average</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript">
+    function loadTable(){
+        $('#myTable tbody').empty();
+        $.ajax({
+            url: 'data',//'api/getMoviesList/',
+            dataType: 'json',
+            // method: 'POST',
+            // data: {
+            //     from: 0,
+            //     to: 100
+            // },
+            success: function(data) {
+                for (var i = 0; i < 100; i++) {
+                    var row = $('<tr><td title="'+ data[i].tagline + '"><a href="/movie/'+ data[i].id + '">' + data[i].title + 
+                    '</a>' +
+                    '</td><td>' + data[i].releaseDate + 
+                    '</td><td>' + data[i].runtime + 
+                    '</td><td>' + data[i].spokenLanguages.join(',<br> ') + 
+                    '</td><td>' + data[i].genres.join(',<br>') + 
+                    '</td><td>' + data[i].productionCompanies.join(',<br>') +
+                    '</td><td>' + data[i].productionCountries.join(',<br> ') + 
+                    '</td><td class="aligncenter">' + data[i].budget + 
+                    '</td><td class="aligncenter">' + data[i].revenue + 
+                    '</td><td>' + data[i].voteAverage + 
+                    '</td><td>' + 
+                    '<input type="hidden" value="' + data[i].id + '">' +
+                    '<button id="updateMovie"> <img style="filter: brightness(0.4);" src="/static/img/pencil-icon.png" width="20" height="20" /> </button>' + 
+                    '<button id="deleteMovie"> <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" width="20" height="20" /> </button>' +'</td></tr>');
+
+                    $('#myTable tbody').append(row);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('Error: ' + textStatus + ' - ' + errorThrown)
+            }
+        });
+    }
+
+    $( document ).ready( () => {
+        loadTable();
+
+        $(document).on( 'click', '#deleteMovie', function(e){
+            let id = $(this).closest( 'td' ).find( 'input[type=hidden]' ).val();
+            confirmModal( 'Delete this movie? This action can not be reverted', function(){
+                //do the delete
+                //alert( id + ' done' );
+                $.ajax({
+                    url: '/deleteData',
+                    dataType: 'json',
+                    method: 'post',
+                    data: {
+                        'id' : id
+                    },
+                    success: function(d){
+                        if( !d.success ){
+                            errorModal( "Error", d.error );
+                        }
+                        loadTable();
+                    }
+                });
+                return true;
+            } )
+        });
+
+        $(document).on( 'click', '#updateMovie', function(e){
+            let id = $(this).closest( 'td' ).find( 'input[type=hidden]' ).val();
+            
+            //do the delete
+            window.location = '/updateData?id='+id;
+            });
+    });
+</script>
+{% endblock scripts %}

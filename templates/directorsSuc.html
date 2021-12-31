@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Search a Director's most Successful movie</h1>
+    <form action="/directorsSuccess" method="POST">
+        <p>Search:</p>
+        <p><input type="text" name="search-input"></p>
+        <p><input class="margin5Top" type="submit" value="submit"></p>
+    </form>
+
+
+    {% if data %}
+    <table id=mytable>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Revenue</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in data%} 
+                <tr>
+                    <td><a href='/movie/{{i.id}}'>{{i.title}}</a></td>
+                    <td>{{i.revenue}}</td>
+                    <td>{{i.name}}</td>
+                </tr>
+            {%endfor%} 
+        </tbody>
+    </table>
+     {% endif %} 
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Search Profit of Movie by Production Company</h1>
+    <form action="/profitData" method="POST">
+        <p>Search:</p>
+        <p><input type="text" name="search-input"></p>
+        <p><input class="margin5Top" type="submit" value="submit"></p>
+    </form>
+
+    
+    {% if data %}
+
+    <script type="text/javascript">
+        
+        window.onload = function() {
+        
+
+        let profitSum = 0;
+        jsdata = JSON.parse( '{{json|safe}}' );
+        console.log( jsdata )
+        for( x in jsdata ){
+            if( jsdata[x].jsprofit > 0)
+                profitSum += jsdata[x].jsprofit;
+        }
+        let cData = [];
+        if( profitSum > 0 ){
+            for( x in jsdata ){
+                if( jsdata[x].jsprofit > 0 ){
+                    cData.push( { 
+                        y: ( jsdata[x].jsprofit / profitSum ) * 100, 
+                        label: jsdata[x].title 
+                    } ) 
+                }
+            }
+        }
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            animationDuration: 250,
+            title: {
+                text: "Most Profitable Movies"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: cData
+            }]
+        });
+        log( cData.length )
+        if( cData.length > 0 ){
+            chart.render();
+            $('#chartContainer').css( "height", "370px" )
+        } else {
+            $('#chartContainer').css( "height", "0px" )
+        }
+        
+        }//end onload
+        </script>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+    <table id=myTable>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Revenue</th>
+                <th>Budget</th>
+                <th>Profit</th>
+                <th class="width40">Production Companies</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for key, i in data.items()%}
+                <tr>
+                    <td><a href='/movie/{{i.id}}'>{{i.title}}</a></td>
+                    <td>{{i.revenue}}</td>
+                    <td>{{i.budget}}</td>
+                    <td>{{i.profit}}</td>
+                    <td>{{", ".join( i.productionCompanies )}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% endif %}
+    
+{% endblock content %}

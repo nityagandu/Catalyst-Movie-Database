@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+{% block content %}
+    <h1>Update the Movie<h1><br>
+        <form action="/updateData" method="POST">
+            <input type="hidden" value="{{value.id}}" name="id" />
+            <table>
+                <tr>
+                    <td><label for="movieName">Movie Name:</label></td>
+                    <td><input type="text" id="movieName" name="movieName" value="{{value.title}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieStatus">Movie Status:</label></td>
+                    <td><input type="text" id="movieStatus" name="movieStatus" value="{{value.status}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieReleaseDate">Movie Release Date:</label></td>
+                    <td><input type="text" id="movieReleaseDate" name="movieReleaseDate" value="{{value.releaseDate}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieBudget">Movie Budget:</label></td>
+                    <td><input type="text" id="movieBudget" name="movieBudget" value="{{value.budget}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieGenres">Movie Genres:</label></td>
+                    <td><input type="text" id="movieGenres" name="movieGenres" value="{{','.join(value.genres)}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieHomepage">Movie Homepage URL:</label></td>
+                    <td><input type="text" id="movieHomepage" name="movieHomepage" value="{{value.homepage}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieKeywords">Movie Keywords:</label></td>
+                    <td><input type="text" id="movieKeywords" name="movieKeywords" value="{{','.join(value.keywords)}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieOrgLang">Movie Original Language:</label></td>
+                    <td><input type="text" id="movieOrgLang" name="movieOrgLang" value="{{value.orgLang}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieOrgTitle">Movie Original Title:</label></td>
+                    <td><input type="text" id="movieOrgTitle" name="movieOrgTitle" value="{{value.orgtitle}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieOverview">Movie Overview:</label></td>
+                    <td><input type="text" id="movieOverview" name="movieOverview" value="{{value.overview}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="moviePopularity">Movie Popularity:</label></td>
+                    <td><input type="text" id="moviePopularity" name="moviePopularity" value="{{value.popularity}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieProductionCompany">Movie Production Companys:</label></td>
+                    <td><input type="text" id="movieProductionCompany" name="movieProductionCompany" value="{{','.join(value.productionCompanies)}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieProductionCountries">Movie Production Countries:</label></td>
+                    <td><input type="text" id="movieProductionCountries" name="movieProductionCountries" value="{{','.join(value.productionCountries)}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieRevenue">Movie Revenue:</label></td>
+                    <td><input type="text" id="movieRevenue" name="movieRevenue" value="{{value.revenue}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieRuntime">Movie Runtime:</label></td>
+                    <td><input type="text" id="movieRuntime" name="movieRuntime" value="{{value.runtime}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieSpokenLang">Movie Spoken Language:</label></td>
+                    <td><input type="text" id="movieSpokenLang" name="movieSpokenLang" value="{{','.join(value.spokenLanguages)}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieTagline">Movie Tagline:</label></td>
+                    <td><input type="text" id="movieTagline" name="movieTagline" value="{{value.tagline}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieVoteAv">Movie Vote Average:</label></td>
+                    <td><input type="text" id="movieVoteAv" name="movieVoteAv" value="{{value.voteAverage}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="movieVoteCount">Movie Vote Count:</label></td>
+                    <td><input type="text" id="movieVoteCount" name="movieVoteCount" value="{{value.voteCount}}"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+
+{% endblock content %}

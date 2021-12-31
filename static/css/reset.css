@@ -1,0 +1,208 @@
+/** reset annoying html css features that are ughhhhh also mixins*/
+html, body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,
+em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
+caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,menu,
+nav,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+
+
+/** mixins here */
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+
+.largeType{ font-size: large; }
+.largerType{ font-size: larger; }
+.mediumType{ font-size: medium; }
+.smallType{ font-size: small; }
+.smallerType{ font-size: smaller; }
+.width5 { width: 5% !important;}
+.width10 { width: 10% !important;}
+.width15 { width: 15% !important;}
+.width20 { width: 20% !important;}
+.width25 { width: 25% !important;}
+.width30 { width: 30% !important;}
+.width35 { width: 35% !important;}
+.width40 { width: 40% !important;}
+.width45 { width: 45% !important;}
+.width50 { width: 50% !important;}
+.width55 { width: 55% !important;}
+.width60 { width: 60% !important;}
+.width65 { width: 65% !important;}
+.width70 { width: 70% !important;}
+.width75 { width: 75% !important;}
+.width80 { width: 80% !important;}
+.width85 { width: 85% !important;}
+.width90 { width: 90% !important;}
+.width95 { width: 95% !important;}
+.width100 { width: 100% !important;}
+.pointer{ cursor: pointer;}
+.loading{ cursor: progress; }
+.rotate90{
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.rotate180{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.rotate270{
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+.round{
+	border-radius: 50%;
+}
+.aligncenter{ text-align: center; }
+.aligncenterImp{ text-align: center !important; }
+.alignleft{ text-align: left; }
+.alignleftImp{ text-align: left !important; }
+.alignright{ text-align: right; }
+.alignrightImp{ text-align: right !important; }
+.alignjustify{ text-align: justify; }
+.alignjustifyImp{ text-align: justify !important; }
+
+.strikeThrough{ text-decoration: line-through }
+
+.block { display: block; }
+.blockImp { display: block !important; }
+.inline { display: inline; }
+.inlineImp { display: inline !important; }
+.inlineBlock{ display: inline-block; }
+.inlineBlockImp{ display: inline-block !important; }
+.flex { display: flex; }
+.none { display: none;}
+.noneImp{ display: none !important; }
+.hidden { visibility: hidden; }
+.clear { clear: both; }
+
+.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after { content: ""; display: table;}
+.clearfix:after { clear: both; }
+
+.floatleft {float: left !important;}
+.floatright {float: right !important;}
+
+.margin0{ margin: 0px; }
+.margin0Top{ margin-top: 0px; }
+.margin0Right{ margin-right: 0px; }
+.margin0Bottom{ margin-bottom: 0px; }
+.margin0Left{ margin-left: 0px; }
+
+.margin5{ margin: 5px; }
+.margin5Top{ margin-top: 5px; }
+.margin5Right{ margin-right: 5px; }
+.margin5Bottom{ margin-bottom: 5px; }
+.margin5Left{ margin-left: 5px; }
+
+.margin10{ margin: 10px; }
+.margin10Top{ margin-top: 10px; }
+.margin10Right{ margin-right: 10px; }
+.margin10Bottom{ margin-bottom: 10px; }
+.margin10Left{ margin-left: 10px; }
+
+.margin15{ margin: 15px; }
+.margin15Top{ margin-top: 15px; }
+.margin15Right{ margin-right: 15px; }
+.margin15Bottom{ margin-bottom: 15px; }
+.margin15Left{ margin-left: 15px; }
+
+.margin20{ margin: 20px; }
+.margin20Top{ margin-top: 20px; }
+.margin20Right{ margin-right: 20px; }
+.margin20Bottom{ margin-bottom: 20px; }
+.margin20Left{ margin-left: 20px; }
+
+.margin0Important{  margin: 0px !important; }
+.margin0TopImportant{  margin-top: 0px !important; }
+.margin0RightImportant{  margin-right: 0px !important; }
+.margin0BottomImportant{  margin-bottom: 0px !important; }
+.margin0LeftImportant{  margin-left: 0px !important; }
+
+.margin5Important{  margin: 5px !important; }
+.margin5TopImportant{  margin-top: 5px !important; }
+.margin5RightImportant{  margin-right: 5px !important; }
+.margin5BottomImportant{  margin-bottom: 5px !important; }
+.margin5LeftImportant{  margin-left: 5px !important; }
+
+.margin10Important{  margin: 10px !important; }
+.margin10TopImportant{  margin-top: 10px !important; }
+.margin10RightImportant{  margin-right: 10px !important; }
+.margin10BottomImportant{  margin-bottom: 10px !important; }
+.margin10LeftImportant{  margin-left: 10px !important; }
+
+.margin15Important{  margin: 15px !important; }
+.margin15TopImportant{  margin-top: 15px !important; }
+.margin15RightImportant{  margin-right: 15px !important; }
+.margin15BottomImportant{  margin-bottom: 15px !important; }
+.margin15LeftImportant{  margin-left: 15px !important; }
+
+.margin20Important{  margin: 20px !important; }
+.margin20TopImportant{  margin-top: 20px !important; }
+.margin20RightImportant{  margin-right: 20px !important; }
+.margin20BottomImportant{  margin-bottom: 20px !important; }
+.margin20LeftImportant{  margin-left: 20px !important; }
+
+.padding0{ padding: 0px; }
+.padding0Top{ padding-top: 0px; }
+.padding0Right{ padding-right: 0px; }
+.padding0Bottom{ padding-bottom: 0px; }
+.padding0Left{ padding-left: 0px; }
+
+.padding5{ padding: 5px; }
+.padding5Top{ padding-top: 5px; }
+.padding5Right{ padding-right: 5px; }
+.padding5Bottom{ padding-bottom: 5px; }
+.padding5Left{ padding-left: 5px; }
+
+.padding10{ padding: 10px; }
+.padding10Top{ padding-top: 10px; }
+.padding10Right{ padding-right: 10px; }
+.padding10Bottom{ padding-bottom: 10px; }
+.padding10Left{ padding-left: 10px; }
+
+.padding15{ padding: 15px; }
+.padding15Top{ padding-top: 15px; }
+.padding15Right{ padding-right: 15px; }
+.padding15Bottom{ padding-bottom: 15px; }
+.padding15Left{ padding-left: 15px; }
+
+.padding0Important{  padding: 0px !important; }
+.padding0TopImportant{  padding-top: 0px !important; }
+.padding0RightImportant{  padding-right: 0px !important; }
+.padding0BottomImportant{  padding-bottom: 0px !important; }
+.padding0LeftImportant{  padding-left: 0px !important; }
+
+.padding5Important{  padding: 5px !important; }
+.padding5TopImportant{  padding-top: 5px !important; }
+.padding5RightImportant{  padding-right: 5px !important; }
+.padding5BottomImportant{  padding-bottom: 5px !important; }
+.padding5LeftImportant{  padding-left: 5px !important; }
+
+.padding10Important{  padding: 10px !important; }
+.padding10TopImportant{  padding-top: 10px !important; }
+.padding10RightImportant{  padding-right: 10px !important; }
+.padding10BottomImportant{  padding-bottom: 10px !important; }
+.padding10LeftImportant{  padding-left: 10px !important; }
+
+.padding15Important{  padding: 15px !important; }
+.padding15TopImportant{  padding-top: 15px !important; }
+.padding15RightImportant{  padding-right: 15px !important; }
+.padding15BottomImportant{  padding-bottom: 15px !important; }
+.padding15LeftImportant{  padding-left: 15px !important; }
