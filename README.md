@@ -28,7 +28,7 @@ Clone/Download the repository.
 git clone https://github.com/nityagandu/Catalyst-Movie-Database.git
 ```
 
-Run main from the downloaded repository.
+Run main.py from the downloaded repository.
 
 ```bash
 python3 main.py
